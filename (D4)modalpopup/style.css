@@ -1,0 +1,39 @@
+html{
+    /* font-size: 10px; */
+    font-family: 'open sans' , 'sans-serif';
+}
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #383CC1;
+
+}
+
+.headsxn{
+    color: #ffffff;
+    text-align: center;
+    padding-bottom: 3rem;
+
+}
+
+.headsxn h1 {
+    font-size: 3.5rem;
+    font-weight: 200;
+    line-height: 0.3;
+}
+.span1{
+    font-weight: 800;
+}
+.headsxn h1 span{
+    
+}
+p{
+    font-size: 1.2rem;
+    /* line-height: 1.5; */
+}
