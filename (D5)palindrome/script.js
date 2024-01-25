@@ -1,5 +1,7 @@
-const button = document.querySelector(".btn");
+const button = document.querySelector(".checkBtn");
+const clearButton = document.querySelector(".clearBtn")
 const result = document.querySelector(".result");
+console.log(result);
 
 button.addEventListener('click',()=> {
     let vowelcount = 0;
@@ -14,5 +16,16 @@ button.addEventListener('click',()=> {
         }        
     }
 
-    result.innerHTML =`${wordval} has ${vowelcount} vowels`
+    const resultText =`${wordval} has ${vowelcount} vowels`;
+    result.innerHTML = resultText;
+
+    localStorage.setItem('result', resultText);
+})
+
+clearButton.addEventListener('click',()=>{
+    const input = document.querySelector(".form-control").value;
+    console.log(input);
+    document.querySelector(".form-control").value = "";
+    result.innerHTML = "";
+   localStorage.removeItem("result");
 })

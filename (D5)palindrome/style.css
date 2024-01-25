@@ -2,3 +2,11 @@
     width: 100vw;
     height: 100vh;
 }
+
+.form-control:focus {
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: #60666f14;
+    outline: 0;
+    box-shadow: 0 0 0 0 rgb(3 4 4 / 0%);
+}
