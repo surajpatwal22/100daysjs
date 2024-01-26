@@ -1,0 +1,24 @@
+.container-fluid{
+    width: 100vw;
+    height: 100vh;
+}
+
+.form-control:focus {
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: #60666f14;
+    outline: 0;
+    box-shadow: 0 0 0 0 rgb(3 4 4 / 0%);
+}
+
+@media (max-width:767px){
+    .container-fluid{
+        padding: 1rem 2px 0 2px !important;
+    }
+    .card-body h2{
+        font-size: 20px;
+    }
+    .input-group{
+        padding-top: 0.6rem;
+    }
+}
