@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Flipper</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-div">
+        <div class="buttons">
+          <button class="start Generator">
+            <i class="fas fa-spinner reset"></i>
+            Start
+          </button>
+          <button class="stop Generator">
+            <i class="fas fa-spinner reset"></i>
+            Stop
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const hexColorGenerator = () => {
+        let val = "0123456789ABCDEF";
+        let cons = "#";
+        for (let i = 0; i < 6; i++) {
+          cons += val[Math.floor(Math.random() * 16)];
+        }
+        return cons;
+      };
+
+      // console.log(hexColorGenerator());
+      const readybtn = document.querySelector(".start");
+      const stopbtn = document.querySelector(".stop");
+
+      let intervalID;
+
+      const startChnagingColor = function () {
+        intervalID = setInterval(() => {
+          if (intervalID !== null) {
+            document.body.style.backgroundColor = hexColorGenerator();
+          }
+        }, 1000);
+      };
+
+      const stopchangingcolor = function () {
+        clearInterval(intervalID);
+        intervalID = null;
+      };
+
+      readybtn.addEventListener("click", startChnagingColor);
+      stopbtn.addEventListener("click", stopchangingcolor);
+    </script>
+  </body>
+</html>
