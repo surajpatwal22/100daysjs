@@ -1,0 +1,13 @@
+.card h2{
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: underline;
+    color: rgba(0, 0, 0, 0.416);
+}
+.card .form-box{
+    padding: 1rem;
+}
+.card .form-box label{
+    font-size: 1.4rem;
+    padding-top: 1rem;
+}
