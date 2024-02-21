@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .navbar {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+      }
+
+      .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbar-brand {
+        font-size: 24px;
+      }
+
+      .navbar-menu {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .navbar-menu li {
+        margin-right: 20px;
+      }
+
+      .navbar-menu li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        transition: color 0.3s ease;
+      }
+
+      .navbar-menu li a:hover {
+        color: #ddd;
+      }
+
+      .navbar-toggle {
+        display: none;
+        cursor: pointer;
+      }
+
+      .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+        transition: background-color 0.3s ease;
+      }
+
+      /* Media Query for Responsive Navbar */
+      @media screen and (max-width: 768px) {
+        .navbar-container {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .navbar-menu {
+          display: none;
+          width: 100%;
+          margin-top: 10px;
+        }
+
+        .navbar-menu li {
+          margin-right: 0;
+        }
+
+        .navbar-toggle {
+          display: block;
+        }
+
+        .change .bar:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+
+        .change .bar:nth-child(2) {
+          opacity: 0;
+        }
+
+        .change .bar:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="navbar-brand">Logo</div>
+        <ul class="navbar-menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="navbar-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+
+    <script>
+      document
+        .querySelector(".navbar-toggle")
+        .addEventListener("click", function () {
+          document.querySelector(".navbar-menu").classList.toggle("show");
+          document.querySelector(".navbar-toggle").classList.toggle("change");
+        });
+    </script>
+  </body>
+</html>
