@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .countdown {
+        font-size: 2em;
+      }
+    </style>
+    <title>Countdown Timer</title>
+  </head>
+  <body>
+    <div class="countdown" id="countdown"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const countdownElement = document.getElementById("countdown");
+
+        function countdown(seconds) {
+          let timer = seconds;
+
+          const interval = setInterval(() => {
+            countdownElement.textContent = timer;
+
+            if (timer === 0) {
+              clearInterval(interval);
+              countdownElement.textContent = "Countdown complete!";
+            }
+
+            timer--;
+          }, 1000);
+        }
+
+        countdown(23);
+      });
+    </script>
+  </body>
+</html>
