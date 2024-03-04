@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      button {
+        background: #fff !important;
+        color: #000 !important;
+        position: relative;
+        border: none;
+        transition: 0.4s ease-in;
+        z-index: 1;
+        width: 100%;
+      }
+      button::before,
+      button::after {
+        position: absolute;
+        content: "";
+        z-index: -1;
+      }
+
+      .btn1:hover {
+        background: #ff96ad;
+        box-shadow: 0 0 5px #ff96ad, 0 0 25px #ff96ad, 0 0 50px #ff96ad,
+          0 0 200px #ff96ad;
+      }
+      .btn2:hover {
+        box-shadow: inset -10.5em 0 0 0 #ff96ad, inset 10em 0 0 0 #ff96ad;
+      }
+      .btn3::after {
+        height: 0;
+        left: 0;
+        transition-duration:0.6sec;
+        width:100%;
+        top: 0;
+      }
+      .btn3:hover::after{
+        height: 100%;
+      }
+
+      .btn4:hover{
+        box-shadow:10px 10px 0px #ff96ad;
+        top:-5px;
+        left:-5px;
+      }
+      .btn5::after{
+        height:100%;
+        left:-35%;
+        top :0;
+        transform:skew(50degree);
+        transition-duration:0.6sec;
+        transform-origion:top left;
+        width:0;
+      }
+      .btn5:hover::after{
+        height:100%;
+        width:135%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid bg-dark" style="height: 100vh">
+      <div class="row p-4">
+        <div class="col-lg-3">
+          <button class="btn btn1 p-2">Button1</button>
+        </div>
+        <div class="col-lg-3">
+          <button class="btn btn2 p-2">Button2</button>
+        </div>
+        <div class="col-lg-3">
+          <button class="btn btn3 p-2">Button3</button>
+        </div>
+        <div class="col-lg-3">
+          <button class="btn btn4 p-2">Button4</button>
+        </div>
+        <div class="col-lg-3">
+          <button class="btn btn5 p-2 mt-4">Button5</button>
+        </div>
+        <div class="col-lg-3">
+          <button class="btn btn6 p-2 mt-4">Button6</button>
+        </div>
+        <div class="col-lg-3">
+          <button class="btn btn7 p-2 mt-4">Button7</button>
+        </div>
+        <div class="col-lg-3">
+          <button class="btn btn8 p-2 mt-4">Button8</button>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
