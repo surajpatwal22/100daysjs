@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcode</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="bg"></div>
+
+    <div class="content">
+        <input type="text" id="text">
+        <svg id="barcode"></svg>
+        <button id="btn">Generate</button>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.6/JsBarcode.all.min.js"
+        integrity="sha512-k2wo/BkbloaRU7gc/RkCekHr4IOVe10kYxJ/Q8dRPl7u3YshAQmg3WfZtIcseEk+nGBdK03fHBeLgXTxRmWCLQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+           const button = document.getElementById('btn');
+            
+           button.addEventListener('click',() => {
+                const text = document.getElementById("text").value;
+                JsBarcode("#barcode", text );
+            });
+            
+            JsBarcode("#barcode", "code");
+        </script>
+</body>
+
+</html>
