@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Navbar</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar_top">
+            <h1 class="navbar_title">Nav<span>bar</span></h1>
+            <button class="navbar_toggle-btn" ></button>
+        </div>
+        <ul class="navbar_list">
+            <li class="navbar_item"><a href="#">Home</a></li>
+            <li class="navbar_item"><a href="#">About</a></li>
+            <li class="navbar_item"><a href="#">Services</a></li>
+            <li class="navbar_item"><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        function toggleNavbar(){
+        const navbarList = document.querySelector('.navbar_list');
+        const toggle = document.querySelector('.navbar_toggle-btn');
+
+        navbarList.classList.toggle('hidden');
+        if (navbarList.classList.toggle('hidden')) {
+           toggle.innerHTML = "" ;
+        } else{
+           toggle.innerHTML = "-" ;
+        }
+        }
+
+    </script>
+</body>
+</html>
