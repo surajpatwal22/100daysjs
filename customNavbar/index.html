@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css" integrity="sha512-cn16Qw8mzTBKpu08X0fwhTSv02kK/FojjNLz0bwp2xJ4H+yalwzXKFw/5cLzuBZCxGWIA+95X4skzvo8STNtSg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Navbar</title>
 </head>
 <body>
     <nav class="navbar">
         <div class="navbar_top">
             <h1 class="navbar_title">Nav<span>bar</span></h1>
-            <button class="navbar_toggle-btn" ></button>
+            <button class="navbar_toggle-btn"><i class='bx bx-menu'></i></button>
         </div>
-        <ul class="navbar_list">
+        <ul class="navbar_list hidden">
             <li class="navbar_item"><a href="#">Home</a></li>
             <li class="navbar_item"><a href="#">About</a></li>
             <li class="navbar_item"><a href="#">Services</a></li>
@@ -20,19 +21,20 @@
         </ul>
     </nav>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/dist/boxicons.min.js" integrity="sha512-VTptlAlSWKaYE3DbrmwNYTzZg1zO6CtoGxplxlHxObgfLiCcRYDBqzTUWE/0ANUmyfYR7R227ZirV/I4rQsPNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script>
-        function toggleNavbar(){
-        const navbarList = document.querySelector('.navbar_list');
         const toggle = document.querySelector('.navbar_toggle-btn');
+        const navbarList = document.querySelector('.navbar_list');
 
-        navbarList.classList.toggle('hidden');
-        if (navbarList.classList.toggle('hidden')) {
-           toggle.innerHTML = "" ;
-        } else{
-           toggle.innerHTML = "-" ;
-        }
-        }
-
+        toggle.addEventListener('click', () => {
+            navbarList.classList.toggle('hidden');
+            if (navbarList.classList.contains('hidden')) {
+                toggle.innerHTML = "<i class='bx bx-menu'></i>";
+            } else {
+                toggle.innerHTML = "<i class='bx bx-menu-alt-left'></i>";
+            }
+        });
     </script>
 </body>
 </html>

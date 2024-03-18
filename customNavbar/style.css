@@ -4,6 +4,9 @@
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+.hidden{
+    display:none;
+}
 
 body {
   background: #141216;
@@ -27,7 +30,13 @@ span {
     display: flex;
     list-style: none;
     gap: 25px;
+    transition: max-height 0.3s ease;
 }
+.bx{
+    font-weight:600;
+    font-size:26px;
+}
+
 .navbar_item a{
     color: #fff;
     text-decoration: none;
