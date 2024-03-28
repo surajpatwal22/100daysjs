@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Note-taking App</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.delete-btn {
+  color: red;
+  cursor: pointer;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Note-taking App</h1>
+    <input type="text" id="noteInput" placeholder="Enter your note">
+    <button onclick="addNote()">Add Note</button>
+    <ul id="noteList"></ul>
+  </div>
+
+  <script>
+    // Function to add a new note
+function addNote() {
+  const noteInput = document.getElementById('noteInput');
+  const noteText = noteInput.value.trim();
+
+  if (noteText !== '') {
+    // Create a unique ID for each note (timestamp can be used)
+    const id = new Date().getTime();
+
+    // Create the note object
+    const note = {
+      id: id,
+      text: noteText
+    };
+
+    // Get existing notes from local storage or create an empty array
+    const notes = JSON.parse(localStorage.getItem('notes')) || [];
+
+    // Add the new note to the array
+    notes.push(note);
+
+    // Save the updated notes array back to local storage
+    localStorage.setItem('notes', JSON.stringify(notes));
+
+    // Clear the input field
+    noteInput.value = '';
+
+    // Refresh the note list
+    displayNotes();
+  }
+}
+
+// Function to display notes
+function displayNotes() {
+  const notes = JSON.parse(localStorage.getItem('notes')) || [];
+  const noteList = document.getElementById('noteList');
+
+  // Clear the existing list items
+  noteList.innerHTML = '';
+
+  // Loop through the notes and create list items
+  notes.forEach(note => {
+    const li = document.createElement('li');
+    li.textContent = note.text;
+
+    // Add a delete button to each note
+    const deleteBtn = document.createElement('span');
+    deleteBtn.textContent = ' X';
+    deleteBtn.className = 'delete-btn';
+    deleteBtn.setAttribute('data-id', note.id);
+    deleteBtn.addEventListener('click', deleteNote);
+
+    li.appendChild(deleteBtn);
+    noteList.appendChild(li);
+  });
+}
+
+// Function to delete a note
+function deleteNote() {
+  const id = parseInt(this.getAttribute('data-id'));
+  let notes = JSON.parse(localStorage.getItem('notes')) || [];
+
+  // Filter out the note with the given ID
+  notes = notes.filter(note => note.id !== id);
+
+  // Save the updated notes array back to local storage
+  localStorage.setItem('notes', JSON.stringify(notes));
+
+  // Refresh the note list
+  displayNotes();
+}
+
+// Display notes when the page loads
+displayNotes();
+
+  </script>
+</body>
+</html>
