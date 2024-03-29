@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moving Bird Animation</title>
+<style>
+    body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #87CEEB; /* Sky blue background */
+}
+
+.bird-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.bird {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-image: url('bird.png'); 
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: fly 2s linear infinite;
+}
+
+@keyframes fly {
+  0% {
+    transform: translateY(0) rotate(-20deg);
+  }
+  50% {
+    transform: translateY(-100px) rotate(20deg);
+  }
+  100% {
+    transform: translateY(0) rotate(-20deg);
+  }
+}
+
+</style>
+</head>
+<body>
+  <div class="bird-container">
+    <div class="bird"></div>
+  </div>
+</body>
+</html>
