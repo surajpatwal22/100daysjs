@@ -1,7 +1,5 @@
-import mongoose from "mongoose";
+ import mongoose from "mongoose"
 
-const userSchema = new mongoose.Schema({});
+ const subTodoSchema = new mongoose.Schema({},{timestamps:true})
 
-// export default mongoose.model("User",userSchema);
-
-export const User = mongoose.model("User",userSchema);
+ export const subTodo = mongoose.model("SubTodo", subTodoSchema)
